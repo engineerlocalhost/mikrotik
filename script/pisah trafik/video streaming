@@ -1,0 +1,19 @@
+/ip firewall raw
+add comment=Youtube action=add-dst-to-address-list address-list=Youtube \
+    address-list-timeout=1h chain=prerouting content=\
+    .youtube.com dst-address-list=!LOKAL src-address-list=LOKAL
+add action=add-dst-to-address-list address-list=Youtube \
+    address-list-timeout=1h chain=prerouting content=\
+    .googlevideo.com dst-address-list=!LOKAL src-address-list=LOKAL
+add action=add-dst-to-address-list address-list=Youtube \
+    address-list-timeout=1h chain=prerouting content=\
+    .ytimg.com dst-address-list=!LOKAL src-address-list=LOKAL
+add action=add-dst-to-address-list address-list=Youtube \
+    address-list-timeout=1h chain=prerouting content=\
+    youtu.be dst-address-list=!LOKAL src-address-list=LOKAL
+add action=add-dst-to-address-list address-list=Youtube \
+    address-list-timeout=1h chain=prerouting content=\
+    yt3.ggpht.com dst-address-list=!LOKAL src-address-list=LOKAL
+add action=add-dst-to-address-list address-list=Youtube \
+    address-list-timeout=1h chain=prerouting content=\
+    youtubei.googleapis.com dst-address-list=!LOKAL src-address-list=LOKAL

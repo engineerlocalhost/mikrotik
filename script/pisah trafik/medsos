@@ -1,0 +1,86 @@
+#TIKTOK
+/ip firewall raw
+add comment="Tiktok" action=add-dst-to-address-list address-list=Tiktok \
+    address-list-timeout=1h chain=prerouting content=\
+    .tiktok.com dst-address-list=!LOKAL src-address-list=LOKAL
+add action=add-dst-to-address-list address-list=Tiktok \
+    address-list-timeout=1h chain=prerouting content=\
+    .tiktokv.com dst-address-list=!LOKAL src-address-list=LOKAL
+add action=add-dst-to-address-list address-list=Tiktok \
+    address-list-timeout=1h chain=prerouting content=\
+    .tiktokcdn.com dst-address-list=!LOKAL src-address-list=LOKAL
+add action=add-dst-to-address-list address-list=Tiktok \
+    address-list-timeout=1h chain=prerouting content=\
+    .byteoversea.com dst-address-list=!LOKAL src-address-list=LOKAL
+add action=add-dst-to-address-list address-list=Tiktok \
+    address-list-timeout=1h chain=prerouting content=\
+    .ibyteimg.com dst-address-list=!LOKAL src-address-list=LOKAL
+add action=add-dst-to-address-list address-list=Tiktok \
+    address-list-timeout=1h chain=prerouting content=\
+    .ibytedtos.com dst-address-list=!LOKAL src-address-list=LOKAL
+add action=add-dst-to-address-list address-list=Tiktok \
+    address-list-timeout=1h chain=prerouting content=\
+    .ttwstatic.com dst-address-list=!LOKAL src-address-list=LOKAL
+add action=add-dst-to-address-list address-list=Tiktok \
+    address-list-timeout=1h chain=prerouting content=\
+    .ttlivecdn.com dst-address-list=!LOKAL src-address-list=LOKAL
+add action=add-dst-to-address-list address-list=Tiktok \
+    address-list-timeout=1h chain=prerouting content=\
+    .tiktokcdn-us.com dst-address-list=!LOKAL src-address-list=LOKAL
+add action=add-dst-to-address-list address-list=Tiktok \
+    address-list-timeout=1h chain=prerouting content=\
+    .tiktokcdn-in.com dst-address-list=!LOKAL src-address-list=LOKAL
+add action=add-dst-to-address-list address-list=Tiktok \
+    address-list-timeout=1h chain=prerouting content=\
+    bytedance.com dst-address-list=!LOKAL src-address-list=LOKAL
+=================================================================================
+
+#Meta
+/ip firewall raw
+add comment="Meta" action=add-dst-to-address-list address-list=Meta \
+    address-list-timeout=1h chain=prerouting content=\
+    .facebook.com dst-address-list=!LOKAL src-address-list=LOKAL
+add action=add-dst-to-address-list address-list=Meta \
+    address-list-timeout=1h chain=prerouting content=\
+    .facebook.net dst-address-list=!LOKAL src-address-list=LOKAL
+add action=add-dst-to-address-list address-list=Meta \
+    address-list-timeout=1h chain=prerouting content=\
+    .fbcdn.net dst-address-list=!LOKAL src-address-list=LOKAL
+add action=add-dst-to-address-list address-list=Meta \
+    address-list-timeout=1h chain=prerouting content=\
+    .fbsbx.com dst-address-list=!LOKAL src-address-list=LOKAL
+add action=add-dst-to-address-list address-list=Meta \
+    address-list-timeout=1h chain=prerouting content=\
+    fb.com dst-address-list=!LOKAL src-address-list=LOKAL
+add action=add-dst-to-address-list address-list=Meta \
+    address-list-timeout=1h chain=prerouting content=\
+    fb.gg dst-address-list=!LOKAL src-address-list=LOKAL
+add action=add-dst-to-address-list address-list=Meta \
+    address-list-timeout=1h chain=prerouting content=\
+    fbwat.ch dst-address-list=!LOKAL src-address-list=LOKAL
+add action=add-dst-to-address-list address-list=Meta \
+    address-list-timeout=1h chain=prerouting content=\
+    messenger.com dst-address-list=!LOKAL src-address-list=LOKAL
+add action=add-dst-to-address-list address-list=Meta \
+    address-list-timeout=1h chain=prerouting content=\
+    me.me dst-address-list=!LOKAL src-address-list=LOKAL
+add comment=INSTAGRAM action=add-dst-to-address-list address-list=Meta \
+    address-list-timeout=1h chain=prerouting content=\
+    .instagram.com dst-address-list=!LOKAL src-address-list=LOKAL
+add action=add-dst-to-address-list address-list=Meta \
+    address-list-timeout=1h chain=prerouting content=\
+    .cdninstagram.com dst-address-list=!LOKAL src-address-list=LOKAL
+add comment=TWITTER action=add-dst-to-address-list address-list=Meta \
+    address-list-timeout=1h chain=prerouting content=\
+    twitter.com dst-address-list=!LOKAL src-address-list=LOKAL
+add action=add-dst-to-address-list address-list=Meta \
+    address-list-timeout=1h chain=prerouting content=\
+    .twitter.com dst-address-list=!LOKAL src-address-list=LOKAL
+add action=add-dst-to-address-list address-list=Meta \
+    address-list-timeout=1h chain=prerouting content=\
+    .twimg.com dst-address-list=!LOKAL src-address-list=LOKAL
+add action=add-dst-to-address-list address-list=Meta \
+    address-list-timeout=1h chain=prerouting content=\
+    t.co dst-address-list=!LOKAL src-address-list=LOKAL
+
+

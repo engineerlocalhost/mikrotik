@@ -1,0 +1,29 @@
+#tokopedia
+/ip firewall raw
+add comment="Tokopedia" action=add-dst-to-address-list address-list=Tokopedia \
+    address-list-timeout=1h chain=prerouting content=\
+    .tokopedia.com dst-address-list=!LOKAL src-address-list=LOKAL
+add action=add-dst-to-address-list address-list=Tokopedia \
+    address-list-timeout=1h chain=prerouting content=\
+    .tokopedia.net dst-address-list=!LOKAL src-address-list=LOKAL
+=======================================================================================
+#Shopee
+/ip firewall raw
+add comment="Shopee" action=add-dst-to-address-list address-list=Shopee \
+    address-list-timeout=1h chain=prerouting content=\
+    shopee.co.id dst-address-list=!LOKAL src-address-list=LOKAL
+add action=add-dst-to-address-list address-list=Shopee \
+    address-list-timeout=1h chain=prerouting content=\
+    .shopee.co.id dst-address-list=!LOKAL src-address-list=LOKAL
+add action=add-dst-to-address-list address-list=Shopee \
+    address-list-timeout=1h chain=prerouting content=\
+    .shopeemobile.com dst-address-list=!LOKAL src-address-list=LOKAL
+add action=add-dst-to-address-list address-list=Shopee \
+    address-list-timeout=1h chain=prerouting content=\
+    .shopee.com dst-address-list=!LOKAL src-address-list=LOKAL
+add action=add-dst-to-address-list address-list=Shopee \
+    address-list-timeout=1h chain=prerouting content=\
+    shopee.io dst-address-list=!LOKAL src-address-list=LOKAL
+add action=add-dst-to-address-list address-list=Shopee \
+    address-list-timeout=1h chain=prerouting content=\
+    .shopee.sg dst-address-list=!LOKAL src-address-list=LOKAL
