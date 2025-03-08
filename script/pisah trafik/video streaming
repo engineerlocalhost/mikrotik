@@ -1,3 +1,5 @@
+#Buat Rule RAW untuk Menandai by konten
+#Youtube
 /ip firewall raw
 add comment=Youtube action=add-dst-to-address-list address-list=Youtube \
     address-list-timeout=1h chain=prerouting content=\
@@ -17,3 +19,22 @@ add action=add-dst-to-address-list address-list=Youtube \
 add action=add-dst-to-address-list address-list=Youtube \
     address-list-timeout=1h chain=prerouting content=\
     youtubei.googleapis.com dst-address-list=!LOKAL src-address-list=LOKAL
+
+#Buat Rule Mangle untuk Menandai Koneksi
+/ip firewall mangle
+add comment="Menandai koneksi ke XXXXX" \
+    chain=prerouting \
+    src-address-list=LOKAL \
+    dst-address-list={nama_addressList} \
+    action=mark-connection \
+    new-connection-mark=[nama_koneksi] \
+    passthrough=yes
+
+#Tandai Paket Berdasarkan Koneksi
+/ip firewall mangle
+add comment="Paket_XXXX" \
+    chain=forward \
+    connection-mark=[nama_koneksi] \
+    action=mark-packet \
+    new-packet-mark=[nama_paket] \
+    passthrough=no

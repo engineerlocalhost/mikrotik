@@ -1,3 +1,4 @@
+#Buat Rule RAW untuk Menandai by konten
 #tokopedia
 /ip firewall raw
 add comment="Tokopedia" action=add-dst-to-address-list address-list=Tokopedia \
@@ -6,7 +7,7 @@ add comment="Tokopedia" action=add-dst-to-address-list address-list=Tokopedia \
 add action=add-dst-to-address-list address-list=Tokopedia \
     address-list-timeout=1h chain=prerouting content=\
     .tokopedia.net dst-address-list=!LOKAL src-address-list=LOKAL
-=======================================================================================
+
 #Shopee
 /ip firewall raw
 add comment="Shopee" action=add-dst-to-address-list address-list=Shopee \
@@ -27,3 +28,23 @@ add action=add-dst-to-address-list address-list=Shopee \
 add action=add-dst-to-address-list address-list=Shopee \
     address-list-timeout=1h chain=prerouting content=\
     .shopee.sg dst-address-list=!LOKAL src-address-list=LOKAL
+
+#Buat Rule Mangle untuk Menandai Koneksi
+/ip firewall mangle
+add comment="Menandai koneksi ke XXXXX" \
+    chain=prerouting \
+    src-address-list=LOKAL \
+    dst-address-list={nama_addressList} \
+    action=mark-connection \
+    new-connection-mark=[nama_koneksi] \
+    passthrough=yes
+
+#Tandai Paket Berdasarkan Koneksi
+/ip firewall mangle
+add comment="Paket_XXXX" \
+    chain=forward \
+    connection-mark=[nama_koneksi] \
+    action=mark-packet \
+    new-packet-mark=[nama_paket] \
+    passthrough=no
+

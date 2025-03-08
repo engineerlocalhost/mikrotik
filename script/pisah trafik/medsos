@@ -1,3 +1,4 @@
+#Buat Rule RAW untuk Menandai by konten
 #TIKTOK
 /ip firewall raw
 add comment="Tiktok" action=add-dst-to-address-list address-list=Tiktok \
@@ -33,8 +34,8 @@ add action=add-dst-to-address-list address-list=Tiktok \
 add action=add-dst-to-address-list address-list=Tiktok \
     address-list-timeout=1h chain=prerouting content=\
     bytedance.com dst-address-list=!LOKAL src-address-list=LOKAL
-=================================================================================
 
+#Buat Rule RAW untuk Menandai by konten
 #Meta
 /ip firewall raw
 add comment="Meta" action=add-dst-to-address-list address-list=Meta \
@@ -83,4 +84,22 @@ add action=add-dst-to-address-list address-list=Meta \
     address-list-timeout=1h chain=prerouting content=\
     t.co dst-address-list=!LOKAL src-address-list=LOKAL
 
+#Buat Rule Mangle untuk Menandai Koneksi
+/ip firewall mangle
+add comment="Menandai koneksi ke XXXXX" \
+    chain=prerouting \
+    src-address-list=LOKAL \
+    dst-address-list={nama_addressList} \
+    action=mark-connection \
+    new-connection-mark=[nama_koneksi] \
+    passthrough=yes
+
+#Tandai Paket Berdasarkan Koneksi
+/ip firewall mangle
+add comment="Paket_XXXX" \
+    chain=forward \
+    connection-mark=[nama_koneksi] \
+    action=mark-packet \
+    new-packet-mark=[nama_paket] \
+    passthrough=no
 
