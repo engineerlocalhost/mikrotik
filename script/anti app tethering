@@ -1,0 +1,3 @@
+#Buat Rule untuk Mengubah TTL Menjadi 1
+/ip firewall mangle
+add action=change-ttl chain=postrouting new-ttl=set:1 out-interface=bridge-Hotspot passthrough=no
