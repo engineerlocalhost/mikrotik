@@ -1,0 +1,20 @@
+#Buat Layer7 Protocol untuk iCloud 
+/ip firewall layer7-protocol
+add name=iCloud regexp="icloud.com|apple.com|me.com|mac.com"
+
+#Buat Mangle Rule untuk Menandai Koneksi ke iCloud
+/ip firewall mangle
+add chain=prerouting layer7-protocol=iCloud action=mark-connection new-connection-mark=iCloud_conn passthrough=yes
+
+#Tandai Paket Berdasarkan Koneksi iCloud
+/ip firewall mangle
+add chain=prerouting connection-mark=iCloud_conn action=mark-packet new-packet-mark=iCloud_packet passthrough=no
+
+
+#(Opsional) Log Trafik iCloud
+/ip firewall filter
+add chain=forward packet-mark=iCloud_packet action=log log-prefix="iCloud Traffic"
+
+#print log
+/log print where message~"iCloud Traffic"
+
