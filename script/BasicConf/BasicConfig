@@ -57,11 +57,11 @@ add action=accept chain=srcnat
 add comment="Modem (ISP)" distance=1 gateway=192.168.1.1
 
 /ip service
-set telnet disabled=yes port=1455
-set ftp disabled=yes port=43356
-set www disabled=yes port=8090
-set ssh disabled=yes port=1553
-set api disabled=yes port=6749
+set telnet disabled=yes port=0000
+set ftp disabled=yes port=40000
+set www disabled=yes port=0000
+set ssh disabled=yes port=0000
+set api disabled=yes port=0000
 set winbox address=10.10.10.0/29,10.0.0.0/24 port=9419
 set api-ssl disabled=yes port=6749
 
