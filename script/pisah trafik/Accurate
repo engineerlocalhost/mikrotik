@@ -1,0 +1,18 @@
+#Buat Rule Mangle untuk Menandai Koneksi
+/ip firewall mangle
+add chain=prerouting dst-address=103.120.233.6 action=mark-connection new-connection-mark=accurate_conn passthrough=yes
+add chain=prerouting dst-address=104.22.5.196 action=mark-connection new-connection-mark=accurate_conn passthrough=yes
+add chain=prerouting dst-address=172.67.40.30 action=mark-connection new-connection-mark=accurate_conn passthrough=yes
+add chain=prerouting dst-address=104.22.4.196 action=mark-connection new-connection-mark=accurate_conn passthrough=yes
+
+#Tandai Paket Berdasarkan Koneksi
+/ip firewall mangle
+add chain=prerouting connection-mark=accurate_conn action=mark-packet new-packet-mark=accurate_packet passthrough=no
+
+#(Opsional) Pisahkan Trafik ke Jalur Tertentu (Routing atau QoS)
+##Jika ingin memisahkan trafik ke jalur tertentu, tambahkan rule routing:
+/ip route add dst-address=103.120.233.6 gateway=ISP1
+/ip route add dst-address=104.22.5.196 gateway=ISP1
+/ip route add dst-address=172.67.40.30 gateway=ISP1
+/ip route add dst-address=104.22.4.196 gateway=ISP1
+
