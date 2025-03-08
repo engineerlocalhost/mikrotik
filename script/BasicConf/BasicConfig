@@ -1,9 +1,9 @@
 /interface ethernet
-set [ find default-name=ether1 ] name=ether1-WAN
-set [ find default-name=ether2 ] name=ether2-WAN
-set [ find default-name=ether3 ] name=ether3-LAN
-set [ find default-name=ether4 ] name=ether4-LAN
-set [ find default-name=ether5 ] name=ether5-Hotspot
+set [ find default-name=ether1 ] name=eth1-WAN
+set [ find default-name=ether2 ] name=eth2-WAN
+set [ find default-name=ether3 ] name=eth3-LAN
+set [ find default-name=ether4 ] name=eth4-LAN
+set [ find default-name=ether5 ] name=eth5-Hotspot
 
 /interface bridge
 add name=bridge-Hotspot
@@ -26,17 +26,17 @@ set read policy="local,telnet,ssh,read,test,winbox,password,web,sniff,sensitiv\
     e,api,romon,tikapp,!ftp,!reboot,!write,!policy,!dude"
 
 /interface bridge port
-add bridge=bridge-WAN interface=ether1-WAN
-add bridge=bridge-WAN interface=ether2-WAN
-add bridge=bridge-LAN interface=ether3-LAN
-add bridge=bridge-LAN interface=ether4-LAN
-add bridge=bridge-Hotspot interface=ether5-Hotspot
+add bridge=bridge-WAN interface=eth1-WAN
+add bridge=bridge-WAN interface=eth2-WAN
+add bridge=bridge-LAN interface=eth3-LAN
+add bridge=bridge-LAN interface=eth4-LAN
+add bridge=bridge-Hotspot interface=eth5-Hotspot
 
 /ip neighbor discovery-settings
 set discover-interface-list=!none
 
 /ip address
-add address=10.0.0.1/24 interface=ether5-Hotspot network=10.0.0.0
+add address=10.0.0.1/24 interface=eth5-Hotspot network=10.0.0.0
 add address=10.10.10.1/29 interface=bridge-LAN network=10.10.10.0
 add address=192.168.1.4/24 interface=bridge-WAN network=192.168.1.0
 
