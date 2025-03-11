@@ -1,1 +1,0 @@
-This script has been renamed. Please see [backup-email](backup-email.md).
