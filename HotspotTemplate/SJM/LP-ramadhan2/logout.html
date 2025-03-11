@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title id="title"></title>
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="pragma" content="no-cache" />
+  <meta http-equiv="expires" content="-1" />
+  <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" href="plug/style.css">
+  <script type="text/javascript" src="js/PrayTimes.js"></script>
+  <script type="text/javascript" src="js/custom.js"></script>
+  <script type="text/javascript" src="js/jquery.js"></script>
+</head>
+<body>
+    <script language="JavaScript">
+        function openLogin() {
+      if (window.name != 'hotspot_logout') return true;
+      open('$(link-login)', '_blank', '');
+      window.close();
+      return false;
+        }
+        function readablizeBytes(bytes) {
+          var s = ['bytes', 'kb', 'MB', 'GB', 'TB', 'PB'];
+          var e = Math.floor(Math.log(bytes)/Math.log(1024));
+          return (bytes/Math.pow(1024, Math.floor(e))).toFixed(2)+" "+s[e];
+      }
+    //-->
+    </script>
+<div class="container transisi">
+		<div class="header">
+			<!-- <img src="img/Wifi.id.png" alt="" style="border-radius: 5px" height="100%" width="100"> -->
+			<div class="head-nav">
+			
+        <!-- <a id="tblmdl">Cara Pakai</a> -->
+			  <a href="#"></a>
+			
+			</div>
+		</div>
+		<div class="notif">
+		<div class="txtjln">
+
+      <marquee direction="left">Selamat datang di hotspot PT. Sumber Jaya Musik.</marquee>
+    </div>
+		 <div class="ntf">
+		
+		 <span>|&nbsp;Notifikasi:</span><marquee direction="right"></marquee>
+		 
+		 </div>
+		</div>
+		<div class ="main">
+			<div class="atas">
+					<img src="img/tarawih.png" alt="" style="border-radius: 5px" height="100%" width="100%">
+				</div>
+			<div class="kanan">
+				<div class="login-content">
+					<div style="font-size: 12px;">
+                        <h3 style="color:#7b7a7a;text-align:center;margin-top:15px;">Terima Kasih</h3>
+                        <div align="center" style="color:#e91e63;"><h2>ANDA TELAH LOGOUT</h2></div> 
+                          <table align="center">
+                            <tr>
+                              <td align="left" style="width: 35%;">User</td>
+                              <td>$(username)</td>
+                            </tr>
+                            <tr>
+                              <td align="left">IP Address</td>
+                              <td>$(ip)</td>
+                            </tr>
+                            <tr>
+                              <td align="left">MAC</td>
+                              <td>$(mac)</td>
+                            </tr>
+                            <tr>
+                              <td align="left">UL | DL</td>
+                               <td>$(bytes-in-nice) | $(bytes-out-nice)</td>
+                            </tr>
+                            <tr>
+                                <td align="left">Aktif</td>
+                              <td>$(uptime)</td>
+                            </tr>
+                            $(if remain-bytes-total)
+                            <tr>
+                              <td align="left">Sisa Kuota</td>
+                              <td><script language="JavaScript">document.write(readablizeBytes($(remain-bytes-total)));</script></td>
+                            </tr>
+                            $(endif)
+                            $(if session-time-left)
+                            <tr>
+                              <td align="left">Sisa Waktu</td>
+                              <td>$(session-time-left)</td>
+                            </tr>
+                            $(endif)
+                          </table>
+                          <div class="mr-b-10">
+                        <center><a href="login.html"><button type="submit" class="btn">LOGIN</button></a></center>
+                        </div>
+                    </div>
+					<center style="padding:104px 20px" id="ctr"></center>
+				</div>
+			</div>
+			<div class="kiri">
+				<img src="img/tarawih.png" alt="" style="border-radius: 5px" height="100%" width="100%">
+			</div>
+			<div class="bawah">
+				<center>
+          <div id="widget-sholat" class="widget-sholat">
+        <div class="widget-sholat-container">
+            <div class="head">
+                <img class="logo" src="img/iconmosque.png" style="border-radius: 50%;box-shadow: 2px 2px 20px 4px rgba(0 0 0 / 6%);">
+                <div class="title">
+                    <h3> Jadwal Shalat </h3>
+                    <h3>
+          <div class="sub">DKI Jakarta dan Sekitarnya</div>
+      <div id="Date"></div>
+          </h3>
+                </div>
+                <button class="Show toggle-jadwal merahmuda">Tutup</button>
+                <button class="Hide toggle-jadwal birumuda">Lihat</button>
+            </div>
+            <div class="id-container">
+              <div class="title">
+                  <div class="desc"> Tanggal </div>
+                  <div class="ket"> :</div>
+                  <div class="nilai">
+                      <div id="tanggal-hijriah"></div>
+                  </div>
+              </div>
+              <div class="title">
+                  <div class="desc"> Jam </div>
+                  <div class="ket"> :</div>
+                  <div class="nilai">
+                      <div id="jam-kanan"></div>
+                  </div>
+              </div>
+              <div class="title">
+                  <div class="desc"> Provinsi </div>
+                  <div class="ket"> :</div>
+                  <div class="nilai">DKI JAKARTA</div>
+              </div>
+              <div class="title">
+                  <div class="desc"> Kab/Kota </div>
+                  <div class="ket"> : </div>
+                  <div class="nilai">JAKARTA</div>
+              </div>
+          </div>
+          <div id="waktucontainer"></div>
+          <div class="foot">
+              <div class="countdown-wrapp">
+                  <h4><span>Menuju Idul Fitri 1446H</span></h4>
+                  <div id="countdown-inner" class="countdown-inner">
+                      <div class="clock-column">
+                          <p class="clock-day clock-timer"></p>
+                          <p class="clock-label Bhari">Hari</p>
+                      </div>
+
+                      <div class="clock-column">
+                          <p class="clock-hours clock-timer"></p>
+                          <p class="clock-label Bjam">Jam</p>
+                      </div>
+
+                      <div class="clock-column">
+                          <p class="clock-minutes clock-timer"></p>
+                          <p class="clock-label Bmenit">Menit</p>
+                      </div>
+
+                      <div class="clock-column">
+                          <p class="clock-seconds clock-timer"></p>
+                          <p class="clock-label Bdetik">Detik</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="subfoot">
+                  <a href="#" id="widget" class="sholat" target="_blank" style="color:#fff;">Jadwal Shalat &copy; 2025</a>
+              </div>
+          </div>
+      </div>
+  </div>
+      </center>
+  </div>
+  <div class="footer">
+    <center><i>Copyright © 2025</a></i>
+    <i>$(identity)</i></center>
+    <!-- Tolong jangan dihilangkan bagian ini, dibuat oleh Sobur Sobari © 2021 -->
+  </div>
+  <!-- Modal Structure -->
+  <div id="mymodal" class="penghalang transisi">
+    <div class="modal-content">
+      <span id="tutup">&times;</span>
+      <p>Pastikan area anda tercover dengan signal wifi kami.
+        Akfitkan wireless pada smartphone atau laptop anda dan koneksikan dengan SSID hotspot kami.
+        Tunggu beberapa saat sampai pop-up notifikasi untuk login muncul, 
+        Setelah anda berhasil masuk ke halaman login silakan aktivasi ID VOUCHER dan klik Login.</p>
+    </div>
+   </div>
+</div>
+
+<script>
+var modal =document.getElementById("mymodal");
+var tblmdl =document.getElementById("tblmdl");
+var tutup =document.getElementById("tutup");
+tblmdl.onclick= function(){
+  modal.style.display="block";
+}
+tutup.onclick= function(){
+  modal.style.display="none";
+}
+window.onclick= function(e){
+  if (e.target==modal){
+    modal.style.display="none";
+  }
+  
+}
+</script>
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript">
+document.getElementById('title').innerHTML = window.location.hostname + " Login ";
+</script>
+<script type="text/javascript">
+username.value=""
+  //auto pass by username-->
+  function setpass(){
+    var user = username.value		
+    password.value = user;
+  }
+    
+  username.onkeyup = setpass;
+  
+function voucher(){
+var ctr=document.getElementById("ctr");
+var pwd=document.getElementById("pwd");
+var usern=document.getElementById("usern");
+  usern.innerHTML="Voucher";
+  pwd.style.display="none";
+  ctr.style.padding="45.6px 20px";
+  username.focus();
+  password.type = "hidden";
+  password.value = username.value;
+  username.onkeyup = setpass;	  
+
+}
+
+// change to member mode
+function member(){
+var ctr=document.getElementById("ctr");
+var pwd=document.getElementById("pwd");
+var usern=document.getElementById("usern");
+  usern.innerHTML="Username";
+  pwd.style.display="";
+  ctr.style.padding="20px";
+  username.focus();
+  username.onkeyup = "";
+  password.type= "Password";
+  password.value = "";
+}
+</script>
+<script type="text/javascript">
+// Jadwal sholat ringroad.net
+// Set Jadwal Sholat call PrayTimes.js
+$(document).ready(function() {
+var date = new Date();
+prayTimes.setMethod('MWL'); // Calculation Methods
+prayTimes.tune({imsak: 2, fajr: 2, dhuhr: 2, asr: 2, maghrib: 2, isha: 2}); // ihtiyati (faktor kehati-hatian) sebesar 2 menit
+var times = prayTimes.getTimes(date, [-6.21154400, 106.84517200, 14.00], 7.00); // Mataram, Nusa Tenggara Barat, Indonesia longitude and latitude (Elevation opsional)  http://www.altitude-maps.com/country/97,Indonesia/
+var list = ['Imsak', 'Fajr', 'Dhuhr', 'Asr', 'Maghrib', 'Isha'];
+var nama = ['IMSAK', 'SUBUH', 'DHUHUR', 'ASHAR', 'MAGHRIB', 'ISYA'];
+var html = '<div class="waktu-container">';
+
+for (var i in list) {
+html += '<div class="waktu">';
+html += '<div class="title">' + nama[i] + '</div>';
+html += '<div class="pukul">' + times[list[i].toLowerCase()] + '</div>';
+html += '</div>';
+}
+html += '</div>';
+document.getElementById('waktucontainer').innerHTML = html;
+// Set Tanggal dan Jam
+var monthNames = [ "Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember" ]; 
+var dayNames = ["Ahad","Senin","Selasa","Rabu","Kamis","Juma't","Sabtu"];
+var newDate = new Date();
+newDate.setDate(newDate.getDate());
+$('#Date').html(dayNames[newDate.getDay()] + ', ' + newDate.getDate() + ' ' + monthNames[newDate.getMonth()] + ' ' + newDate.getFullYear());
+setInterval( function() {
+var currentTime = getDateTime();
+$("#jam-kanan").html(currentTime);
+},1000);
+});
+// Set Calender Hijriah
+document.getElementById("tanggal-hijriah").innerHTML = (writeIslamicDate(-1));
+</script>
+<script>
+// Set Show Hide Jadwal
+$('.Hide').click(function() {
+  $('.waktu-container, .id-container').show(500);
+  $('.Show').show(0);
+  $('.Hide').hide(0);
+});
+$('.Show').click(function() {
+  $('.waktu-container, .id-container').hide(500);
+  $('.Show').hide(0);
+  $('.Hide').show(0);
+});
+</script>
+<script>
+// Set Menuju Ramadhan / Idul Fitri
+var deadline = 'mar 31 2025 00:00:00 GMT+0700';
+run_clock('countdown-inner',deadline);
+</script>
+<a href="http://ringroad.net/" id="login"/ >
+
+</body>
+</html>

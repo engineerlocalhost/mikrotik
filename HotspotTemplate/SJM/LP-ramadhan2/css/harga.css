@@ -1,0 +1,29 @@
+/* Pricing Section Card by Guru Design (www.gurudzgn.com) */
+.pricing-section{font-family:'Google Sans',Arial,sans-serif;position:relative;overflow:hidden;display:block;margin: 40px 0;line-height:1.7}
+.pricing-section .pricing-title{font-size:1.1rem;margin:1rem 0 0;font-weight:700}
+.pricing-container{display:flex;max-width:1000px;margin:0 auto}
+.pricing-tag{margin:.5rem 0 1rem;font-size:13px;display:inline-block;background:#333;color:#fff;padding:3px 15px;border-radius:20px}
+a.pricing-order-btn{font-size:14px;text-transform:uppercase;text-decoration:none;background:#333;color:#fff;display:inline-block;padding:7px 20px;border-radius:20px;transition:all .3s ease-in-out}
+a.pricing-order-btn:hover{transform:scale(1.1)}
+.pricing-column{background:#fff;padding:30px 15px;box-sizing:border-box;border-radius:10px;text-align:center;width:33%;margin:10px;box-shadow:0 7px 7px rgba(0,0,0,0.06);border:2px solid #fff;transition:all .3s ease-in-out}
+.pricing-column ul{list-style:none;padding:10px 0;margin:0;font-size:14px;line-height:2.2}
+.pricing-column img{width:50px}
+.pricing-section i{font-size:3rem}
+.pricing-price{font-weight:700;font-size:22px}
+.service-info{opacity:.7}
+.pricing-2-column .pricing-column{width:50%}
+.pricing-column:nth-child(1) .pricing-price,.pricing-column:nth-child(1) i{color:#f87200}
+.pricing-column:nth-child(2) .pricing-price,.pricing-column:nth-child(2) i{color:#ff5483}
+.pricing-column:nth-child(3) .pricing-price,.pricing-column:nth-child(3) i{color:#2b73f6}
+.pricing-column:nth-child(4) .pricing-price,.pricing-column:nth-child(4) i{color:#f62b2b}
+.pricing-column:nth-child(1):hover{border-color:#f87200}
+.pricing-column:nth-child(2):hover{border-color:#ff5483}
+.pricing-column:nth-child(3):hover{border-color:#2b73f6}
+.pricing-column:nth-child(4):hover{border-color:#f62b2b}
+.pricing-column:nth-child(1) .pricing-tag,.pricing-column:nth-child(1) a.pricing-order-btn{background:#f87200}
+.pricing-column:nth-child(2) .pricing-tag,.pricing-column:nth-child(2) a.pricing-order-btn{background:#ff5483}
+.pricing-column:nth-child(3) .pricing-tag,.pricing-column:nth-child(3) a.pricing-order-btn{background:#2b73f6}
+.pricing-column:nth-child(4) .pricing-tag,.pricing-column:nth-child(4) a.pricing-order-btn{background:#f62b2b}
+@media screen and (max-width:580px){
+.pricing-column,.pricing-2-column .pricing-column{width:auto}
+.pricing-container{display:block}}
