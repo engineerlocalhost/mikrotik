@@ -1,0 +1,11 @@
+#Download file mikhmonv3
+git clone https://github.com/laksa19/mikhmonv3 
+
+#copi file mikhmonv3 ke webserver directory
+cp -R mikhmonv3 /var/www/html/ 
+
+#beri hak akses atau kepemilikan direktori dan file mikhmon
+chown www-data:www-data -R * 
+
+
+detail bisa cek di : https://www.raintekno.com/2023/05/cara-install-mikhmon-di-linux-ubuntu.html
