@@ -1,0 +1,8 @@
+# Menandai koneksi AnyDesk
+/ip firewall mangle
+add action=mark-connection chain=prerouting protocol=tcp dst-port=6568-6569,7070-7071,7443,80,443,50001-50003 new-connection-mark=anydesk_conn passthrough=yes comment="Mark AnyDesk Connection"
+add action=mark-packet chain=prerouting connection-mark=anydesk_conn new-packet-mark=anydesk_packet passthrough=no comment="Mark AnyDesk Packet"
+
+# Menandai routing AnyDesk
+/ip firewall mangle
+add action=mark-routing chain=prerouting packet-mark=anydesk_packet new-routing-mark=anydesk_route passthrough=no comment="Mark Routing for AnyDesk"
