@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Nova Viera Internet</title>
+
+<link rel="stylesheet" href="/css/style.css">
+
+<meta http-equiv="refresh" content="5;url=/login">
+
+<style>
+
+.index-wrapper{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+.index-card{
+
+    max-width:650px;
+    width:100%;
+
+    text-align:center;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    border-radius:24px;
+
+    padding:40px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+.index-logo img{
+    width:120px;
+    margin-bottom:20px;
+}
+
+.index-title{
+    font-size:38px;
+    font-weight:700;
+    color:#fff;
+}
+
+.index-subtitle{
+    color:#94a3b8;
+    margin-top:10px;
+    margin-bottom:30px;
+}
+
+.btn-enter{
+
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    min-width:240px;
+
+    height:58px;
+
+    border-radius:16px;
+
+    text-decoration:none;
+
+    background:linear-gradient(
+    135deg,
+    #0ea5e9,
+    #38bdf8
+    );
+
+    color:#fff;
+
+    font-weight:700;
+
+    transition:.3s;
+
+}
+
+.btn-enter:hover{
+
+    transform:translateY(-2px);
+
+}
+
+.feature-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:15px;
+
+    margin-top:30px;
+
+}
+
+.feature-box{
+
+    padding:20px;
+
+    border-radius:16px;
+
+    background:
+    rgba(255,255,255,.05);
+
+}
+
+.feature-box h4{
+    color:white;
+    margin-bottom:8px;
+}
+
+.feature-box p{
+    color:#94a3b8;
+    font-size:13px;
+}
+
+@media(max-width:768px){
+
+    .feature-grid{
+        grid-template-columns:1fr;
+    }
+
+    .index-title{
+        font-size:28px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="bg-slider">
+
+<div class="slide active"></div>
+<div class="slide"></div>
+<div class="slide"></div>
+
+</div>
+
+<div class="overlay"></div>
+
+<div class="index-wrapper">
+
+<div class="index-card">
+
+<div class="index-logo">
+
+<img
+src="/img/logo.png"
+alt="Nova Viera">
+
+</div>
+
+<h1 class="index-title">
+
+Nova Viera Internet
+
+</h1>
+
+<p class="index-subtitle">
+
+Smart Residential Internet Solution
+
+</p>
+
+<a
+href="/login"
+class="btn-enter">
+
+Masuk ke Portal Internet
+
+</a>
+
+<div class="feature-grid">
+
+<div class="feature-box">
+
+<h4>⚡ Cepat</h4>
+
+<p>
+Koneksi internet stabil dan berkecepatan tinggi.
+</p>
+
+</div>
+
+<div class="feature-box">
+
+<h4>🛡 Aman</h4>
+
+<p>
+Jaringan terlindungi dan terkelola dengan baik.
+</p>
+
+</div>
+
+<div class="feature-box">
+
+<h4>📞 Support</h4>
+
+<p>
+Tim teknis siap membantu apabila terjadi kendala.
+</p>
+
+</div>
+
+</div>
+
+<div
+style="
+margin-top:30px;
+font-size:13px;
+color:#64748b;
+">
+
+Anda akan diarahkan otomatis ke halaman login dalam 5 detik.
+
+</div>
+
+</div>
+
+</div>
+
+<script src="/js/script.js"></script>
+
+</body>
+
+</html>
