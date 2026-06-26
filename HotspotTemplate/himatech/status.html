@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
-<title>Status Koneksi - HIMATECH NET</title>
+<title>Dashboard Pelanggan | HIMATECH NET</title>
 
 <link rel="stylesheet" href="css/style.css">
 
@@ -14,86 +16,351 @@
 
 <div id="particles"></div>
 
-<div class="status-wrapper">
+<header class="navbar">
 
-<div class="status-card glass">
+    <div class="logo-wrap">
 
-<div class="status-header">
+        <img src="img/logo.png"
+             class="logo"
+             alt="HIMATECH NET">
 
-<img src="img/logo.png" class="status-logo">
+        <div class="brand">
 
-<h1>Status Koneksi</h1>
+            <h2>HIMATECH NET</h2>
 
-<p>Informasi koneksi internet Anda</p>
+            <span>
+                Internet Cepat & Stabil
+            </span>
+
+        </div>
+
+    </div>
+
+    <button id="menuToggle">
+        ☰
+    </button>
+
+    <nav id="menu">
+
+        <ul class="main-menu">
+
+            <li>
+                <a href="login.html">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="paket.html">
+                    Paket Internet
+                </a>
+            </li>
+
+            <li class="dropdown">
+
+                <a href="#">
+                    Website
+                </a>
+
+                <ul class="dropdown-menu">
+
+                    <li><a href="#">Pembuatan Website</a></li>
+
+                    <li><a href="#">Optimasi Website</a></li>
+
+                    <li><a href="#">SEO Website</a></li>
+
+                </ul>
+
+            </li>
+
+            <li class="dropdown">
+
+                <a href="#">
+                    IT Support
+                </a>
+
+                <ul class="dropdown-menu">
+
+                    <li><a href="#">Service Komputer</a></li>
+
+                    <li><a href="#">Instalasi Jaringan</a></li>
+
+                    <li><a href="#">Instalasi CCTV</a></li>
+
+                    <li><a href="#">Maintenance</a></li>
+
+                </ul>
+
+            </li>
+
+            <li class="dropdown">
+
+                <a href="#">
+                    Konten Kreator
+                </a>
+
+                <ul class="dropdown-menu">
+
+                    <li><a href="#">Editing Video</a></li>
+
+                    <li><a href="#">Editing Foto</a></li>
+
+                    <li><a href="#">Photography</a></li>
+
+                </ul>
+
+            </li>
+
+            <li class="dropdown">
+
+                <a href="#">
+                    Bantuan
+                </a>
+
+                <ul class="dropdown-menu">
+
+                    <li><a href="#">Cara Login</a></li>
+
+                    <li><a href="#">Cara Beli Voucher</a></li>
+
+                    <li><a href="#">FAQ</a></li>
+
+                    <li><a href="#">Lapor Gangguan</a></li>
+
+                </ul>
+
+            </li>
+
+        </ul>
+
+    </nav>
+
+    <div class="top-actions">
+
+        <button id="themeToggle">
+
+            🌙
+
+        </button>
+
+    </div>
+
+</header>
+
+<div class="overlay"></div>
+
+<div class="container">
+
+<div class="status-card">
+
+<div class="status-title">
+
+
+<h2 id="greeting">
+Selamat Datang
+</h2>
+
+<p>
+Himatech Net - Internet Warga
+</p>
+
+<div id="clock"></div>
 
 </div>
 
-<table class="status-table">
+<!-- INFO GRID -->
 
-<tr>
-<td>Username</td>
-<td><strong>$(username)</strong></td>
-</tr>
+<div class="info-grid">
 
-<tr>
-<td>IP Address</td>
-<td>$(ip)</td>
-</tr>
+<div class="info-box">
+<small>Username</small>
+<strong>$(username)</strong>
+</div>
 
-<tr>
-<td>MAC Address</td>
-<td>$(mac)</td>
-</tr>
+<div class="info-box">
+<small>IP Address</small>
+<strong>$(ip)</strong>
+</div>
 
-<tr>
-<td>Durasi Online</td>
-<td>$(uptime)</td>
-</tr>
+<div class="info-box">
+<small>MAC Address</small>
+<strong>$(mac)</strong>
+</div>
 
-<tr>
-<td>Download</td>
-<td>$(bytes-in-nice)</td>
-</tr>
+<div class="info-box">
+<small>Session Time</small>
+<strong id="uptime-refresh">
+$(uptime)
+</strong>
+</div>
 
-<tr>
-<td>Upload</td>
-<td>$(bytes-out-nice)</td>
-</tr>
+<div class="info-box">
+<small>Download</small>
+<strong>
+$(bytes-in-nice)
+</strong>
+</div>
 
-$(if session-time-left)
-<tr>
-<td>Sisa Waktu</td>
-<td>$(session-time-left)</td>
-</tr>
-$(endif)
+<div class="info-box">
+<small>Upload</small>
+<strong>
+$(bytes-out-nice)
+</strong>
+</div>
 
-</table>
+</div>
 
-<div class="status-actions">
+<!-- LIVE SPEED -->
 
-<a
-href="$(link-status)"
-class="btn-secondary">
+<div
+class="bandwidth-section"
+style="margin-top:25px;">
 
-Refresh
+<div class="bandwidth-title">
+Kecepatan Saat Ini
+</div>
 
-</a>
+<div class="info-grid">
 
-<a
-href="$(link-logout)"
-class="btn-login">
+<div class="info-box">
+
+<small>Download Speed</small>
+
+<strong
+id="download-speed">
+
+0 Mbps
+
+</strong>
+
+</div>
+
+<div class="info-box">
+
+<small>Upload Speed</small>
+
+<strong
+id="upload-speed">
+
+0 Mbps
+
+</strong>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- BANDWIDTH PROGRESS -->
+
+<div class="bandwidth-section">
+
+<div class="bandwidth-title">
+Penggunaan Bandwidth
+</div>
+
+<div class="progress">
+
+<div
+class="progress-bar"
+data-value="65">
+
+</div>
+
+</div>
+
+<div class="progress-label">
+
+Bandwidth Usage
+
+</div>
+
+</div>
+
+<!-- SESSION TIMER -->
+
+<div class="bandwidth-section">
+
+<div class="bandwidth-title">
+
+Waktu Koneksi Aktif
+
+</div>
+
+<div
+style="
+font-size:28px;
+font-weight:700;
+margin-top:10px;
+color:white;
+">
+
+<span
+id="connection-timer">
+
+00:00:00
+
+</span>
+
+</div>
+
+</div>
+
+
+
+<!-- NETWORK INFO -->
+
+<div
+style="
+margin-top:25px;
+">
+
+<div class="bandwidth-title">
+Informasi Jaringan
+</div>
+
+<div class="info-grid">
+
+<div class="info-box">
+<small>Server</small>
+<strong>Himatech</strong>
+</div>
+
+<div class="info-box">
+<small>Status</small>
+<strong
+style="
+color:#22c55e;
+">
+
+Connected
+
+</strong>
+</div>
+
+</div>
+
+</div>
+
+<!-- LOGOUT -->
+
+<form
+action="$(link-logout)"
+name="logout"
+method="post">
+
+<input
+type="hidden"
+name="erase-cookie"
+value="true">
+
+<button
+class="btn-logout">
 
 Logout
 
-</a>
+</button>
 
-</div>
-
-</div>
-
-</div>
-
-<script src="/js/app.js"></script>
-
-</body>
-</html>
+</form>
