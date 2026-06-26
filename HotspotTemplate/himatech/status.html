@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Status Koneksi - HIMATECH NET</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<div id="particles"></div>
+
+<div class="status-wrapper">
+
+<div class="status-card glass">
+
+<div class="status-header">
+
+<img src="img/logo.png" class="status-logo">
+
+<h1>Status Koneksi</h1>
+
+<p>Informasi koneksi internet Anda</p>
+
+</div>
+
+<table class="status-table">
+
+<tr>
+<td>Username</td>
+<td><strong>$(username)</strong></td>
+</tr>
+
+<tr>
+<td>IP Address</td>
+<td>$(ip)</td>
+</tr>
+
+<tr>
+<td>MAC Address</td>
+<td>$(mac)</td>
+</tr>
+
+<tr>
+<td>Durasi Online</td>
+<td>$(uptime)</td>
+</tr>
+
+<tr>
+<td>Download</td>
+<td>$(bytes-in-nice)</td>
+</tr>
+
+<tr>
+<td>Upload</td>
+<td>$(bytes-out-nice)</td>
+</tr>
+
+$(if session-time-left)
+<tr>
+<td>Sisa Waktu</td>
+<td>$(session-time-left)</td>
+</tr>
+$(endif)
+
+</table>
+
+<div class="status-actions">
+
+<a
+href="$(link-status)"
+class="btn-secondary">
+
+Refresh
+
+</a>
+
+<a
+href="$(link-logout)"
+class="btn-login">
+
+Logout
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="/js/app.js"></script>
+
+</body>
+</html>
